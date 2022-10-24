@@ -1,39 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <math.h>
-
 /**
- * main - print password.
+ * main - entry point generates a random password
  *
- * Return: 0.
+ * Return: the generated password
  */
-
 int main(void)
 {
-	int ascii = 2772, i = 0, j, random;
-	char password[100];
-	time_t t;
+char c;
+int x;
 
-	srand((int) time(&t));
-	while (ascii > 126)
-	{
-		random = rand() % 126;
-		password[i] = random;
-		ascii -= random;
-		i++;
-	}
-	if (ascii > 0)
-		password[i] = ascii;
-	else
-	{
-		i--;
-	}
-	
-
-	for (j = 0; j <= i; j++)
-	{
-		printf("%c", password[j]);
-	}
-	return (0);
+srand(time(0));
+while (x <= 2645)
+{
+c = rand() % 128;
+x += c;
+putchar(c);
+}
+putchar(2772 - x);
+return (0);
 }
